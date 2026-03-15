@@ -1,25 +1,35 @@
+using NB_ToolLibrary;
 using UnityEngine;
 
 public class TestState01 : BaseState
 {
-    public TestState01(StateMachineOwner owner) : base(owner)
+    float time = 0.0f;
+
+    public TestState01(StateMachineOwner owner, StateMachine stateMachine) : base(owner, stateMachine)
     {
-        Debug.Log("Sub-class contructor");
+
     }
 
     public override void Enter()
     {
-        Debug.Log("Enter");
+        Debug.Log("Enter State 01");
+        time = 0.0f;
     }
 
     public override void Update()
     {
-        Debug.Log("Update");
+        time += Time.deltaTime;
+
+        if(time >= 5.0f)
+        {
+            _stateMachine.ChangeState(new TestState02(_owner, _stateMachine));
+            return;
+        }
     }
 
     public override void Exit()
     {
-        Debug.Log("Exit");
+        Debug.Log("Exit State 01");
     }
 
 }

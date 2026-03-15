@@ -24,11 +24,11 @@ public class StateMachineOwner : MonoBehaviour
         if (!typeof(BaseState).IsAssignableFrom(initialStateClass))
         {
             //If the selected script object don't contain a class that inherit from BaseState
-            Debug.LogError($"{initialStateClass.Name} is not a State script and does not inherit from BaseState");
+            Debug.LogError($"{initialStateClass.Name} does not inherit from BaseState and is therefore not considered a state class", _initialStateScript);
             return;
         }
 
-        BaseState initialState = (BaseState)Activator.CreateInstance(initialStateClass, new object[] { this }); // Use reflection to create the class instance without knowing its name beforehand
+        BaseState initialState = (BaseState)Activator.CreateInstance(initialStateClass, new object[] { this, _stateMachine }); // Use reflection to create the class instance without knowing its name beforehand
         _stateMachine.ChangeState(initialState);
     }
 }

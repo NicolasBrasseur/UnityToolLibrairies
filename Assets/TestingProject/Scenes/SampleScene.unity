@@ -491,6 +491,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectPooler
       objectReference: {fileID: 0}
+    - target: {fileID: 6688292448805624909, guid: f0af801723cc1794aafa673e52ba5936, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7705651735582032117, guid: f0af801723cc1794aafa673e52ba5936, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -587,6 +591,10 @@ PrefabInstance:
     - target: {fileID: 4464861528838939360, guid: f4178fb50b2f83340abdcc43b6fa3295, type: 3}
       propertyPath: m_Name
       value: StateMachineEntity
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360207314389336208, guid: f4178fb50b2f83340abdcc43b6fa3295, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6360207314389336208, guid: f4178fb50b2f83340abdcc43b6fa3295, type: 3}
       propertyPath: _initialState

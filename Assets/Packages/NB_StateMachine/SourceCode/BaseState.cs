@@ -1,13 +1,15 @@
+using NB_ToolLibrary;
 using UnityEngine;
 
 public abstract class BaseState
 {
-    private StateMachineOwner _owner;
+    protected StateMachineOwner _owner;
+    protected StateMachine _stateMachine;
 
-    public BaseState(StateMachineOwner owner)
+    public BaseState(StateMachineOwner owner, StateMachine stateMachine)
     {
         _owner = owner;
-        Debug.Log("Base class contructor");
+        _stateMachine = stateMachine;
     }
 
     public virtual void Enter()
