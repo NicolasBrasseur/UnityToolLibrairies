@@ -383,6 +383,54 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &744590597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744590599}
+  - component: {fileID: 744590600}
+  m_Layer: 0
+  m_Name: AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &744590599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744590597}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.04342, y: 0.96715, z: -5.7004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &744590600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744590597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9f95ac9ba5c864a95c0ac56c974b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NB_ToolLibrary.AudioRandomizer
+  _audioClips:
+  - {fileID: 8300000, guid: 82f777da269d9aa49b5076e3eaedc3fd, type: 3}
+  _maxPitchModifier: 0.676
+  _maxVolumeModifier: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPooledObjects
   _spawn: 0
+  _playSound: 0
+  _randomizer: {fileID: 744590600}
   _spawnObject: {fileID: 7341310872280502455, guid: b5b46555ef3fa684a96548c9b0351e75, type: 3}
   _spawnPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &2058616152
@@ -619,3 +669,4 @@ SceneRoots:
   - {fileID: 2058616152}
   - {fileID: 2901724714633722375}
   - {fileID: 6434852420697975066}
+  - {fileID: 744590599}

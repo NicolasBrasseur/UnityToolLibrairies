@@ -3,7 +3,12 @@ using NB_ToolLibrary;
 
 public class SpawnPooledObjects : MonoBehaviour
 {
+    [Header("Audio")]
     [SerializeField] private bool _spawn = false;
+    [SerializeField] private bool _playSound = false;
+    [SerializeField] private AudioRandomizer _randomizer;
+    [Space(5)]
+    [Header("Pool")]
     [SerializeField] private GameObject _spawnObject;
     [SerializeField] private Vector3 _spawnPosition = Vector3.zero;
 
@@ -26,6 +31,14 @@ public class SpawnPooledObjects : MonoBehaviour
             if(spawnedObject.TryGetComponent<SpawnedObject>(out SpawnedObject spawnedObjectComponent)) { spawnedObjectComponent.SetDeleteTimer(); }
 
             _spawn = false;
+        }
+
+        if(_playSound)
+        {
+
+            _randomizer.PlayAudio();
+
+            _playSound = false;
         }
     }
 }
