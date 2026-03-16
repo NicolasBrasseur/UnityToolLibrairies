@@ -10,6 +10,7 @@ namespace NB_ToolLibrary
         [SerializeField] private AudioClip[] _audioClips = new AudioClip[0];
         [SerializeField][Range(0,1)] private float _maxPitchModifier = 0.5f;
         [SerializeField][Range(0, 1)] private float _maxVolumeModifier = 0.5f;
+        [SerializeField] private float _volumeMultiplier = 1.0f;
 
         #endregion
 
@@ -30,7 +31,7 @@ namespace NB_ToolLibrary
             AudioClip clip = _audioClips[randomIndex];
             audioSource.clip = clip;
             audioSource.pitch = randomPitch;
-            audioSource.volume = randomVolume;
+            audioSource.volume = randomVolume * _volumeMultiplier;
 
             audioSource.Play();
             Destroy(audioSource, clip.length / randomPitch);
