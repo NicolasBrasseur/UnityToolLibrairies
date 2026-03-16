@@ -6,7 +6,11 @@ using System;
 public class StateMachineOwner : MonoBehaviour
 {
     [SerializeField] private MonoScript _initialStateScript; // Get script object since non-monobehaviour abstract class with custom contructor in not serializable
+    [SerializeField] private ScriptableObject _entityData;
     private StateMachine _stateMachine = new StateMachine();
+
+    public ScriptableObject EntityData => _entityData;
+    public StateMachine StateMachine => _stateMachine;
 
     private void Start()
     {
@@ -28,7 +32,7 @@ public class StateMachineOwner : MonoBehaviour
             return;
         }
 
-        BaseState initialState = (BaseState)Activator.CreateInstance(initialStateClass, new object[] { this, _stateMachine }); // Use reflection to create the class instance without knowing its name beforehand
+        BaseState initialState = (BaseState)Activator.CreateInstance(initialStateClass, new object[] { this }); // Use reflection to create the class instance without knowing its name beforehand
         _stateMachine.ChangeState(initialState);
     }
 }

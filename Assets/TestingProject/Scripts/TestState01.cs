@@ -1,11 +1,10 @@
-using NB_ToolLibrary;
 using UnityEngine;
 
 public class TestState01 : BaseState
 {
     float time = 0.0f;
 
-    public TestState01(StateMachineOwner owner, StateMachine stateMachine) : base(owner, stateMachine)
+    public TestState01(StateMachineOwner owner) : base(owner)
     {
 
     }
@@ -22,7 +21,7 @@ public class TestState01 : BaseState
 
         if(time >= 5.0f)
         {
-            _stateMachine.ChangeState(new TestState02(_owner, _stateMachine));
+            ChangeState(new TestState02(_owner));
             return;
         }
     }

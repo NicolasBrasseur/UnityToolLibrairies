@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TestState02 : BaseState
 {
-    public TestState02(StateMachineOwner owner, StateMachine stateMachine) : base(owner, stateMachine)
+    public TestState02(StateMachineOwner owner) : base(owner)
     {
 
     }
