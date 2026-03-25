@@ -7,10 +7,12 @@ public class StateMachineOwner : MonoBehaviour
 {
     [SerializeField] private MonoScript _initialStateScript; // Get script object since non-monobehaviour abstract class with custom contructor in not serializable
     [SerializeField] private ScriptableObject _entityData;
+    [SerializeField] private SceneRefHolder _sceneReferences;
     private StateMachine _stateMachine = new StateMachine();
 
     public ScriptableObject EntityData => _entityData;
     public StateMachine StateMachine => _stateMachine;
+    public SceneRefHolder SceneReferences => _sceneReferences;
 
     private void Start()
     {

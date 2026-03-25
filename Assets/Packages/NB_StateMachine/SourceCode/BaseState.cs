@@ -5,11 +5,13 @@ public abstract class BaseState
 {
     protected StateMachineOwner _owner;
     protected ScriptableObject _entityData;
+    protected SceneRefHolder _sceneReferences;
 
     public BaseState(StateMachineOwner owner)
     {
         _owner = owner;
         _entityData = _owner.EntityData;
+        _sceneReferences = _owner.SceneReferences;
     }
 
     public virtual void Enter()
